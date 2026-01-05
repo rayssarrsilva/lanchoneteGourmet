@@ -165,3 +165,74 @@ body {
   margin-top: 8px;
   padding: 8px;
 }
+
+.visual-break {
+  height: 260px;
+  background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1550547660-d9450f859349");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 80px 0;
+}
+
+.visual-break h2 {
+  font-family: 'Bebas Neue';
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #c59d5f;
+}
+.social-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  background: #161616;
+  color: #c59d5f;
+  font-family: 'Bebas Neue';
+  letter-spacing: 1px;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.social-btn:hover {
+  background: #1f1f1f;
+  transform: translateY(-2px);
+}
+
+.social-btn .material-icons-outlined {
+  font-size: 20px;
+}
+.instagram-feed h2 {
+  font-family: 'Bebas Neue';
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+/* Linha rústica abaixo do título */
+.instagram-feed h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #c59d5f;
+  margin: 12px auto 0;
+  opacity: 0.9;
+}

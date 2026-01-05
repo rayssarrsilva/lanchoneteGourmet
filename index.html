@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Burger House | Hambúrguer Artesanal</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Hambúrguer artesanal gourmet com ingredientes selecionados. Faça seu pedido online e receba em casa.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
@@ -21,21 +24,11 @@
   <div class="logo">BURGER HOUSE</div>
 
   <ul class="nav-links">
-    <li data-target="lanches">
-      <span class="material-icons-outlined">lunch_dining</span> Lanches
-    </li>
-    <li data-target="bebidas">
-      <span class="material-icons-outlined">local_drink</span> Bebidas
-    </li>
-    <li data-target="petiscos">
-      <span class="material-icons-outlined">restaurant</span> Petiscos
-    </li>
-    <li data-target="milkshakes">
-      <span class="material-icons-outlined">icecream</span> Milkshakes
-    </li>
-    <li data-target="contato">
-      <span class="material-icons-outlined">call</span> Contato
-    </li>
+    <li data-target="lanches"><span class="material-icons-outlined">lunch_dining</span> Lanches</li>
+    <li data-target="bebidas"><span class="material-icons-outlined">local_drink</span> Bebidas</li>
+    <li data-target="petiscos"><span class="material-icons-outlined">restaurant</span> Petiscos</li>
+    <li data-target="milkshakes"><span class="material-icons-outlined">icecream</span> Milkshakes</li>
+    <li data-target="contato"><span class="material-icons-outlined">call</span> Contato</li>
   </ul>
 
   <div class="cart-btn" onclick="toggleCart()">
@@ -52,7 +45,6 @@
   </div>
 </header>
 
-<!-- MENU -->
 <!-- MENU -->
 <section id="lanches" class="menu">
   <h2>Lanches</h2>
@@ -74,7 +66,45 @@
   <div class="menu-grid" data-menu="Milkshakes"></div>
 </section>
 
-<!-- CARRINHO -->
+
+<!-- 📸 FEED INSTAGRAM (fictício, prova social) -->
+<section class="instagram-feed">
+  <h2>Nosso Instagram</h2>
+
+
+  <div class="insta-grid">
+    <div class="insta-photo"></div>
+    <div class="insta-photo"></div>
+    <div class="insta-photo"></div>
+    <div class="insta-photo"></div>
+    <div class="insta-photo"></div>
+    <div class="insta-photo"></div>
+  </div>
+</section>
+
+<!-- 🔗 REDES SOCIAIS -->
+<section class="social-section" id="contato">
+  <a href="https://instagram.com/seulanche" target="_blank" class="social-btn instagram">
+    <span class="material-icons-outlined">photo_camera</span> Instagram
+  </a>
+
+  <a href="https://facebook.com/seulanche" target="_blank" class="social-btn facebook">
+    <span class="material-icons-outlined">facebook</span> Facebook
+  </a>
+
+  <a href="https://wa.me/5599999999999" target="_blank" class="social-btn whatsapp">
+    <span class="material-icons-outlined">chat</span> WhatsApp
+  </a>
+</section>
+
+<!-- 🧾 FOOTER INSTITUCIONAL -->
+<footer class="footer">
+  <p>© 2026 Burger House • Hambúrguer Artesanal</p>
+  <p>Pedidos via WhatsApp • Atendimento local </p>
+
+</footer>
+
+<!-- 🛒 CARRINHO -->
 <div id="cart" class="cart">
   <div class="cart-header">
     <h3>Seu Pedido</h3>
