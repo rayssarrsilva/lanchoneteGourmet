@@ -161,6 +161,24 @@ menu.forEach(sec => {
    SCROLL NAVBAR
 ====================== */
 
+document.querySelectorAll('.nav-links li').forEach(item => {
+  item.addEventListener('click', () => {
+    const target = item.getAttribute('data-target');
+
+    if (target === 'contato') {
+      window.open('https://wa.me/5599999999999', '_blank');
+      return;
+    }
+
+    const section = document.getElementById(target);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
 // ANIMAÇÃO POR SESSÃO (Lanches, Bebidas, etc)
 const sections = document.querySelectorAll('.menu');
 
@@ -177,3 +195,4 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 sections.forEach(section => observer.observe(section));
+
