@@ -161,18 +161,19 @@ menu.forEach(sec => {
    SCROLL NAVBAR
 ====================== */
 
-document.querySelectorAll(".nav-links li").forEach(link => {
-  link.addEventListener("click", () => {
-    const target = link.dataset.target;
+// ANIMAÇÃO POR SESSÃO (Lanches, Bebidas, etc)
+const sections = document.querySelectorAll('.menu');
 
-    if (target === "contato") {
-      window.open("https://wa.me/5500000000000", "_blank");
-      return;
-    }
-
-    const section = document.getElementById(target);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // anima só uma vez (padrão gourmet)
     }
   });
+}, {
+  threshold: 0.25, // só anima quando a seção realmente entra
+  rootMargin: "-80px 0px" // compensa navbar fixa
 });
+
+sections.forEach(section => observer.observe(section));
