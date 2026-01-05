@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Burger House | Hambúrguer Artesanal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">BURGER HOUSE</div>
+
+  <ul class="nav-links">
+    <li data-target="lanches">
+      <span class="material-icons-outlined">lunch_dining</span> Lanches
+    </li>
+    <li data-target="bebidas">
+      <span class="material-icons-outlined">local_drink</span> Bebidas
+    </li>
+    <li data-target="petiscos">
+      <span class="material-icons-outlined">restaurant</span> Petiscos
+    </li>
+    <li data-target="milkshakes">
+      <span class="material-icons-outlined">icecream</span> Milkshakes
+    </li>
+    <li data-target="contato">
+      <span class="material-icons-outlined">call</span> Contato
+    </li>
+  </ul>
+
+  <div class="cart-btn" onclick="toggleCart()">
+    <span class="material-icons-outlined">shopping_cart</span>
+    <span id="cart-count">0</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>HAMBÚRGUER ARTESANAL DE VERDADE</h1>
+    <p>Sabor, identidade e experiência gourmet</p>
+  </div>
+</header>
+
+<!-- MENU -->
+<!-- MENU -->
+<section id="lanches" class="menu">
+  <h2>Lanches</h2>
+  <div class="menu-grid" data-menu="Lanches"></div>
+</section>
+
+<section id="petiscos" class="menu">
+  <h2>Petiscos</h2>
+  <div class="menu-grid" data-menu="Petiscos"></div>
+</section>
+
+<section id="bebidas" class="menu">
+  <h2>Bebidas</h2>
+  <div class="menu-grid" data-menu="Bebidas"></div>
+</section>
+
+<section id="milkshakes" class="menu">
+  <h2>Milkshakes</h2>
+  <div class="menu-grid" data-menu="Milkshakes"></div>
+</section>
+
+<!-- CARRINHO -->
+<div id="cart" class="cart">
+  <div class="cart-header">
+    <h3>Seu Pedido</h3>
+    <span class="close" onclick="toggleCart()">✕</span>
+  </div>
+
+  <div id="cart-items"></div>
+
+  <div class="cart-footer">
+    <strong>Total: R$ <span id="total">0.00</span></strong>
+
+    <select id="pagamento">
+      <option value="">Forma de pagamento</option>
+      <option>Crédito</option>
+      <option>Débito</option>
+      <option>Pix</option>
+      <option>Dinheiro</option>
+    </select>
+
+    <input id="nome" placeholder="Nome">
+    <input id="bairro" placeholder="Bairro">
+    <input id="rua" placeholder="Rua">
+    <input id="numero" placeholder="Número">
+    <input id="complemento" placeholder="Complemento">
+    <textarea id="obs-geral" placeholder="Observações gerais"></textarea>
+
+    <button onclick="finalizarPedido()">Finalizar no WhatsApp</button>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
