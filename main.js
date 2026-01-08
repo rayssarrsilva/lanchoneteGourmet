@@ -10,19 +10,23 @@ function toggleCart() {
 
 function addItem(name, price) {
   const item = cart.find(i => i.name === name);
+
   if (item) {
     item.qty++;
   } else {
     cart.push({ name, price, qty: 1, obs: "" });
   }
+
   updateCart();
 }
 
 function changeQty(index, value) {
   cart[index].qty += value;
+
   if (cart[index].qty <= 0) {
     cart.splice(index, 1);
   }
+
   updateCart();
 }
 
@@ -32,6 +36,7 @@ function updateCart() {
   const countEl = document.getElementById("cart-count");
 
   items.innerHTML = "";
+
   let total = 0;
   let count = 0;
 
@@ -88,10 +93,14 @@ function finalizarPedido() {
   msg += `${nome.value}%0A`;
   msg += `${rua.value}, ${numero.value}%0A`;
   msg += `${bairro.value}%0A`;
-  if (complemento.value) msg += `Comp: ${complemento.value}%0A`;
 
-  if (document.getElementById("obs-geral").value) {
-    msg += `%0A📝 Obs gerais:%0A${document.getElementById("obs-geral").value}`;
+  if (complemento.value) {
+    msg += `Comp: ${complemento.value}%0A`;
+  }
+
+  const obsGeral = document.getElementById("obs-geral");
+  if (obsGeral.value) {
+    msg += `%0A📝 Obs gerais:%0A${obsGeral.value}`;
   }
 
   window.open(
@@ -179,20 +188,23 @@ document.querySelectorAll('.nav-links li').forEach(item => {
     }
   });
 });
-// ANIMAÇÃO POR SESSÃO (Lanches, Bebidas, etc)
+
+/* ======================
+   ANIMAÇÃO POR SESSÃO
+====================== */
+
 const sections = document.querySelectorAll('.menu');
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // anima só uma vez (padrão gourmet)
+      observer.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.25, // só anima quando a seção realmente entra
-  rootMargin: "-80px 0px" // compensa navbar fixa
+  threshold: 0.25,
+  rootMargin: "-80px 0px"
 });
 
 sections.forEach(section => observer.observe(section));
-
